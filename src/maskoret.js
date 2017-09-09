@@ -49,15 +49,15 @@ export default () => {
     console.log('');
 
     rl.question(message('hoursQuestion'),
-    (minutesAnswer) => {
-      if (minutesAnswer === '') {
+    (hoursAmswer) => {
+      if (hoursAmswer === '') {
         minutes = 0;
       }
       let timeArray = [];
-      if (minutesAnswer.includes(':')) {
-        timeArray = minutesAnswer.split(':');
+      if (hoursAmswer.includes(':')) {
+        timeArray = hoursAmswer.split(':');
       } else {
-        timeArray = minutesAnswer.split(' ');
+        timeArray = hoursAmswer.split(' ');
       }
       const hh = Number(timeArray[0]);
       const mm = Number(timeArray[1]);
