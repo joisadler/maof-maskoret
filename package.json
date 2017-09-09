@@ -1,0 +1,40 @@
+{
+  "name": "maof-maskoret",
+  "version": "0.0.1",
+  "description": "Simple command-line tool that calculates gross and net salary for the employees of the Israeli poultry factory",
+  "main": "dist/maskoret.js",
+  "scripts": {
+    "test": "jest",
+    "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
+    "prepublish": "npm run build"
+  },
+  "bin": {
+    "say-shalom": "dist/bin.js"
+  },
+  "preferGlobal": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joisadler/maof-maskoret.git"
+  },
+  "keywords": [
+    "salary",
+    "calculator"
+  ],
+  "author": "Yossi Adler <joisadler@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joisadler/maof-maskoret/issues"
+  },
+  "homepage": "https://github.com/joisadler/maof-maskoret#readme",
+  "devDependencies": {
+    "babel-cli": "*",
+    "babel-preset-env": "*",
+    "babel-preset-stage-0": "*",
+    "eslint": "*",
+    "eslint-config-airbnb-base": "*",
+    "eslint-plugin-import": "*",
+    "eslint-plugin-jest": "*",
+    "jest": "*"
+  },
+  "dependencies": {}
+}
