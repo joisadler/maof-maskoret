@@ -1,6 +1,6 @@
 # maof-maskoret
 
-[![Build Status](https://travis-ci.org/joisadler/maof-maskoret.svg?branch=master)](https://travis-ci.org/joisadler/maof-maskoret)]
+[![Build Status](https://travis-ci.org/joisadler/maof-maskoret.svg?branch=master)](https://travis-ci.org/joisadler/maof-maskoret)
 
 Command-line tool that calculates gross and net salary for the employees of the Israeli poultry factory. Designed mainly for my personal use.
 
