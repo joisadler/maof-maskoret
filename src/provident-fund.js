@@ -1,2 +1,3 @@
+const rate = 0.06;
 export default baseSalary =>
-Math.round(baseSalary * 0.06);
+Math.round(baseSalary * rate);
