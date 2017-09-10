@@ -120,11 +120,15 @@ export default () => {
 
                   const hours = (minutes / 60).toFixed(2);
                   const salaryForHours = Math.round(hours * hourlySalary);
-                  const baseSalary = numberOfChickens * 0.21;
-                  const chabad = chabadDays * 50;
-                  const vacation = Math.round(baseSalary / 22);
-                  const holidays = holidaysNumber * 333;
-                  const gross = salaryForHours + chabad + vacation + holidays + holidayGift;
+                  const tariffForOneChicken = 0.21;
+                  const baseSalary = numberOfChickens * tariffForOneChicken;
+                  const chabadPremiumForOneDay = 50;
+                  const chabad = chabadDays * chabadPremiumForOneDay;
+                  const vacationDays = 11;
+                  const vacationMoney = Math.round(baseSalary / vacationDays / 2);
+                  const salaryForHoliday = vacationMoney;
+                  const holidays = holidaysNumber * salaryForHoliday;
+                  const gross = salaryForHours + chabad + vacationMoney + holidays + holidayGift;
 
                   const providentFund = calculateProvidentFund(baseSalary);
                   const incomeTax = calculateIncomeTax(gross, creditPoints, baseSalary);
