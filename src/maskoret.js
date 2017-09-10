@@ -50,15 +50,17 @@ export default () => {
     console.log('');
 
     rl.question(message('hoursQuestion'),
-    (hoursAmswer) => {
-      if (hoursAmswer === '') {
+    (hoursAnswer) => {
+      if (hoursAnswer === '') {
         minutes = 0;
       }
       let timeArray = [];
-      if (hoursAmswer.includes(':')) {
-        timeArray = hoursAmswer.split(':');
+      if (hoursAnswer.includes('.')) {
+        timeArray = hoursAnswer.split('.');
+      } else if (hoursAnswer.includes(':')) {
+        timeArray = hoursAnswer.split(':');
       } else {
-        timeArray = hoursAmswer.split(' ');
+        timeArray = hoursAnswer.split(' ');
       }
       const hh = Number(timeArray[0]);
       const mm = Number(timeArray[1]);
