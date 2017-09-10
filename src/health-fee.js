@@ -1,7 +1,7 @@
 export default (gross) => {
   const taxRateIncreasePoint = 5804;
-  const part1 = gross > taxRateIncreasePoint ? 5804 : gross;
-  const part2 = gross - 5804;
+  const part1 = gross > taxRateIncreasePoint ? taxRateIncreasePoint : gross;
+  const part2 = gross - taxRateIncreasePoint;
   const taxRate1 = 0.031;
   const taxRate2 = 0.05;
 
