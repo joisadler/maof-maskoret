@@ -19,13 +19,14 @@ export default () => {
 
   const messages = new Messages();
   const message = (messageName) => {
-    if (language === 'English') {
-      return messages.getEnglishMessage(messageName);
+    switch (language) {
+      case 'Hebrew':
+        return messages.getHebrewMessage(messageName);
+      case 'Russian':
+        return messages.getRussianMessage(messageName);
+      default:
+        return messages.getEnglishMessage(messageName);
     }
-    if (language === 'Russian') {
-      return messages.getRussianMessage(messageName);
-    }
-    return messages.getHebrewMessage(messageName);
   };
 
   const rl = readline.createInterface(process.stdin, process.stdout);
