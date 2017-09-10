@@ -1,15 +1,10 @@
 export default (gross) => {
-  let part1 = 0;
-  let part2 = 0;
+  const taxRateIncreasePoint = 5804;
+  const part1 = gross > taxRateIncreasePoint ? 5804 : gross;
+  const part2 = gross - 5804;
+  const taxRate1 = 0.0385;
+  const taxRate2 = 0.07;
+  const someDeduction = 200; // I don't really know what does this deduction mean but it must be here
 
-  if (gross < 5804) {
-    part1 = gross;
-  }
-  if (gross > 5804) {
-    part1 = 5804;
-    part2 = gross - 5804;
-  }
-  return Math.round(((part1 * 0.0385)
-  + (part2 * 0.07))
-  - 200); // what are this 200?
+  return Math.round(((part1 * taxRate1) + (part2 * taxRate2)) - someDeduction);
 };
