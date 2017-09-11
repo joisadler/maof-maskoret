@@ -2,36 +2,43 @@ import calculateProvidentFund from './provident-fund';
 
 export default (gross, creditPoints, baseSalary) => {
   const providentFund = calculateProvidentFund(baseSalary);
-  const providentFundCredit = (providentFund * 0.35);
+  const providentFundCreditRate = 0.35;
+  const providentFundCredit = providentFund * providentFundCreditRate;
   const creditPoint = 215;
+  const creditPointsCredit = creditPoint * creditPoints;
+  const credits = providentFundCredit + creditPointsCredit;
+  const taxRateIncreasePoint1 = 6221;
+  const taxRateIncreasePoint2 = 8921;
+  const taxRateIncreasePoint3 = 14321;
+  const taxRateIncreasePoint4 = 19901;
+  const taxRate1 = 0.1;
+  const taxRate2 = 0.14;
+  const taxRate3 = 0.2;
+  const taxRate4 = 0.31;
 
-  let part1 = 0;
-  let part2 = 0;
-  let part3 = 0;
-  let part4 = 0;
+  const part1 = gross <= taxRateIncreasePoint1 ?
+    gross :
+    taxRateIncreasePoint1;
+  const part2 = gross <= taxRateIncreasePoint1 ?
+    0 :
+    gross <= taxRateIncreasePoint2 ?
+    gross - part1 :
+    taxRateIncreasePoint2 - part1;
+  const part3 = gross <= taxRateIncreasePoint2 ?
+    0 :
+    gross <= taxRateIncreasePoint3 ?
+    gross - part1 - part2 :
+    taxRateIncreasePoint3 - part1 - part2;
+  const part4 = gross <= taxRateIncreasePoint3 ?
+    0 :
+    gross <= taxRateIncreasePoint4 ?
+    gross - part1 - part2 - part3 :
+    taxRateIncreasePoint4 - part1 - part2 - part3;
 
-  if (gross < 6221) {
-    part1 = gross;
-  }
-  if (gross >= 6221 && gross < 8921) {
-    part1 = 6221;
-    part2 = gross - 6221;
-  }
-  if (gross >= 8921 && gross < 14321) {
-    part1 = 6221;
-    part2 = 8921 - 6221;
-    part3 = gross - 8921;
-  }
-  if (gross >= 14321 && gross < 19901) {
-    part1 = 6221;
-    part2 = 8921 - 6221;
-    part3 = 14321 - 8921;
-    part4 = gross - 14321;
-  }
-  return Math.round(((part1 * 0.1)
-  + (part2 * 0.14)
-  + (part3 * 0.2)
-  + (part4 * 0.31))
-  - (creditPoint * creditPoints)
-  - providentFundCredit);
+  console.log(part1)
+  return Math.round(((part1 * taxRate1)
+  + (part2 * taxRate2)
+  + (part3 * taxRate3)
+  + (part4 * taxRate4))
+  - credits);
 };
