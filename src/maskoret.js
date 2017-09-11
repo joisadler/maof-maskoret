@@ -5,6 +5,7 @@ import calculateHealthFee from './health-fee';
 import calculateSocialSecurity from './social-security';
 import calculateTotalDeductions from './total-deductions';
 import calculateNetSalary from './net-salary';
+import toGross from './to-gross';
 import Messages from './Messages';
 
 export default () => {
@@ -114,7 +115,7 @@ export default () => {
                   || holidayGiftAnswer === 'ל') {
                     holidayGift = 0;
                   } else {
-                    holidayGift = 370;
+                    holidayGift = toGross(250);
                   }
                   console.log('');
 
