@@ -35,7 +35,6 @@ export default (gross, creditPoints, baseSalary) => {
     gross - part1 - part2 - part3 :
     taxRateIncreasePoint4 - part1 - part2 - part3;
 
-  console.log(part1)
   return Math.round(((part1 * taxRate1)
   + (part2 * taxRate2)
   + (part3 * taxRate3)
