@@ -9,6 +9,6 @@ Command-line tool that calculates gross and net salary for the employees of the 
 ```
 `$ npm install -g maof-maskoret`
 ```
-**Usage:**
+**Usage:** 
 
 ![](/tty.gif)

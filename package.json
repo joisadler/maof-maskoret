@@ -1,7 +1,7 @@
 {
   "name": "maof-maskoret",
-  "version": "1.0.0",
-  "description": "Simple command-line tool that calculates gross and net salary for the employees of the Israeli poultry factory",
+  "version": "1.0.1",
+  "description": "Simple command-line tool that calculates gross and net salary for the employees of some Israeli poultry factory",
   "main": "dist/maskoret.js",
   "scripts": {
     "test": "jest",

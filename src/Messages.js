@@ -1,5 +1,5 @@
 const reverseString = str =>
- str.split('').reverse().join('');
+  str.split('').reverse().join('');
 
 export default class Messages {
   constructor() {
