@@ -122,7 +122,7 @@ export default () => {
                                 || holidayGiftAnswer === 'ל') {
                                   holidayGift = 0;
                                 } else {
-                                  holidayGift = toGross(250);
+                                  holidayGift = 300/* toGross(250) */;
                                 }
                                 console.log('');
 
